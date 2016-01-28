@@ -1,0 +1,40 @@
+version: 0.0.1
+language: 'nodejs' # nodejs or python2.7
+variables:
+  - MyVariable # accessible as process.env.MyVariable - value input through the site
+methods:
+  GET:
+    status_codes:
+      - 200 # Can only have one 2xx status code and it must be first in the list
+      - 400
+      - 401
+      - 404
+      - 409
+      - 500
+    path_params:
+      - id : required
+    query_string_params:
+      - username
+  POST:
+    status_codes:
+      - 201 # Can only have one 2xx status code and it must be first in the list
+      - 400
+      - 401
+      - 404
+      - 409
+      - 500
+    path_params:
+      - id : required
+    query_string_params:
+      - username
+
+# path params
+# all required must come before optional
+# only one optional allowed
+# warn that querystring and path params that are named the same can cause issues (there's a precendence in Lambda)
+
+# if 1 optional then create /method and /path_param/method
+# if 1 required then create /path_param/method
+# if 1 required and 1 optional then create /path_param_req/method and /path_param_req/path_param_opt/method
+# if n required then create /path_param_1/.../path_param_n/method
+# if n required and 1 optional then create /path_param_req_1/.../path_param_req_n/method and /path_param_req_1/.../path_param_req_n/path_param_opt/method

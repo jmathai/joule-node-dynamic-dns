@@ -1,0 +1,15 @@
+{
+  "name": "joule-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate template for creating joules.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "joule-local": "0.0.3"
+  },
+  "scripts": {
+    "test": "node ./node_modules/joule-local/index.js"
+  },
+  "author": "Jaisen Mathai",
+  "license": "ISC"
+}
