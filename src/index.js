@@ -10,11 +10,15 @@
  *    event.{pathParam}, Path parameters as defined in your .joule.yml
  *    event.{queryStringParam}, Query string parameters as defined in your .joule.yml
  */
+var response = require('joule-node-response');
+
 exports.handler = function(event, context) {
-  // take event and reverse all the values
-  var output = {};
-  for(key in event) {
-    output[key] = event[key].split('').reverse().join('');
-  }
-  context.succeed(output);
+  var name = event.name || 'World';
+  var greeting = 'Hello, ' + name + '.';
+
+  var result = {
+    "message": greeting
+  };
+  
+  response.success200(context, result);
 };
