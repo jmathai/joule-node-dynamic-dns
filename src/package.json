@@ -5,10 +5,11 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "joule-local": "0.0.3"
+    "joule-node-local": "<2.0.0",
+    "joule-node-response": "<2.0.0"
   },
   "scripts": {
-    "test": "node ./node_modules/joule-local/index.js"
+    "test": "node ./node_modules/joule-node-local/index.js"
   },
   "author": "Jaisen Mathai",
   "license": "ISC"
