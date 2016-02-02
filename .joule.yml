@@ -1,6 +1,6 @@
 version: 0.0.1
 language: 'nodejs'
-variables:
+environment_variables:
   - MyVariable # accessible as process.env.MyVariable - value input through the site
 methods:
   GET:
