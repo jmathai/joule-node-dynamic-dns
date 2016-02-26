@@ -12,7 +12,7 @@ methods:
       - 409
       - 500
     path_params:
-      - myPathParam : required # [required or optional], see below for details, accessible as process.env.myPathParam
+      - myPathParam : optional # [required or optional], see below for details, accessible as process.env.myPathParam
     query_string_params:
       - myQueryStringParam # accessible as process.env.myQueryStringParam
   POST:
@@ -24,7 +24,7 @@ methods:
       - 409
       - 500
     path_params:
-      - myPathParam : required # [required or optional], see below for details, accessible as process.env.myPathParam
+      - myPathParam : optional # [required or optional], see below for details, accessible as process.env.myPathParam
     query_string_params:
       - myQueryStringParam # accessible as process.env.myQueryStringParam
   PUT:
@@ -36,7 +36,7 @@ methods:
       - 409
       - 500
     path_params:
-      - myPathParam : required # [required or optional], see below for details, accessible as process.env.myPathParam
+      - myPathParam : optional # [required or optional], see below for details, accessible as process.env.myPathParam
     query_string_params:
       - myQueryStringParam # accessible as process.env.myQueryStringParam
   DELETE:
@@ -48,7 +48,7 @@ methods:
       - 409
       - 500
     path_params:
-      - myPathParam : required # [required or optional], see below for details, accessible as process.env.myPathParam
+      - myPathParam : optional # [required or optional], see below for details, accessible as process.env.myPathParam
     query_string_params:
       - myQueryStringParam # accessible as process.env.myQueryStringParam
 
