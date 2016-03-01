@@ -16,7 +16,7 @@ exports.handler = function(event, context) {
 	var response = new Response();
 	response.setContext(context);
 
-  var name = event.name || 'World';
+  var name = event.query['name'] || 'World';
   var greeting = 'Hello, ' + name + '.';
 
   var result = {

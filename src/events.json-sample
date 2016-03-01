@@ -5,10 +5,9 @@
   "events": {
     "GET": {
       "/user/joule": [
-        {"input1":"value1"},
-        {"input1":"another input"}
+        {"name":"name 1"}
       ],
-      "/user/joule?name1=value1": [
+      "/user/joule?name=name1": [
         {}
       ]
     }
