@@ -1,5 +1,16 @@
-[
-  {},
-  {"name": "Joule"},
-  {"name": "Dave"}
-]
+{
+  "env": {
+    "MY_SECRET": "_some_secret_"
+  },
+  "events": {
+    "GET": {
+      "/user/joule": [
+        {"input1":"value1"},
+        {"input1":"another input"}
+      ],
+      "/user/joule?name1=value1": [
+        {}
+      ]
+    }
+  }
+}

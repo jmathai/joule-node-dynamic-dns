@@ -10,9 +10,12 @@
  *    event.{pathParam}, Path parameters as defined in your .joule.yml
  *    event.{queryStringParam}, Query string parameters as defined in your .joule.yml
  */
-var response = require('joule-node-response');
+var Response = require('joule-node-response');
 
 exports.handler = function(event, context) {
+	var response = new Response();
+	response.setContext(context);
+
   var name = event.name || 'World';
   var greeting = 'Hello, ' + name + '.';
 
@@ -20,5 +23,5 @@ exports.handler = function(event, context) {
     "message": greeting
   };
   
-  response.success200(context, result);
+  response.send(result);
 };
