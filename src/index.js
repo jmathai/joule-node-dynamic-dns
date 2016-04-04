@@ -1,25 +1,19 @@
 /**
- * This is the boilerplate repository for creating joules.
- * Forking this repository should be the starting point when creating a joule.
+ * This Joule is a serverless dynamic DNS system using Lambda and Route53.
  */
 
-/*
- * The handler function for all API endpoints.
- * The `event` argument contains all input values.
- *    event.httpMethod, The HTTP method (GET, POST, PUT, etc)
- *    event.{pathParam}, Path parameters as defined in your .joule.yml
- *    event.{queryStringParam}, Query string parameters as defined in your .joule.yml
- */
-var Response = require('joule-node-response');
+// We have to require the aws-sdk and immediately set the credentials.
+// If we instantiate the Route53 object first then it assumes the role assigned to the lambda function.
 var AWS = require('aws-sdk');
-var crypto = require('crypto');
-var route53 = new AWS.Route53({apiVersion: '2013-04-01'});
-var zoneName = process.env.ZONE.toLowerCase();
-var domainName = process.env.DOMAIN.toLowerCase();
-
 if(process.env.AWS_KEY !== '' && process.env.AWS_SECRET !== '') {
   AWS.config.update({accessKeyId: process.env.AWS_KEY, secretAccessKey: process.env.AWS_SECRET});
 }
+var route53 = new AWS.Route53({apiVersion: '2013-04-01'});
+
+var Response = require('joule-node-response');
+var crypto = require('crypto');
+var zoneName = process.env.ZONE.toLowerCase();
+var domainName = process.env.DOMAIN.toLowerCase();
 
 exports.handler = function(event, context) {
 	var response = new Response();
