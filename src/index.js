@@ -17,8 +17,8 @@ var route53 = new AWS.Route53({apiVersion: '2013-04-01'});
 var zoneName = process.env.ZONE.toLowerCase();
 var domainName = process.env.DOMAIN.toLowerCase();
 
-if(process.env.AWS_ACCESS_KEY_ID !== '' && process.env.AWS_SECRET_ACCESS_KEY !== '') {
-  AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY});
+if(process.env.AWS_KEY !== '' && process.env.AWS_SECRET !== '') {
+  AWS.config.update({accessKeyId: process.env.AWS_KEY, secretAccessKey: process.env.AWS_SECRET});
 }
 
 exports.handler = function(event, context) {
