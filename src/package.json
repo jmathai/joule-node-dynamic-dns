@@ -4,9 +4,11 @@
   "description": "Boilerplate template for creating joules.",
   "main": "index.js",
   "dependencies": {
+    "crypto": "0.0.3",
     "joule-node-response": "<2.0.0"
   },
   "devDependencies": {
+    "aws-sdk": "^2.3.0",
     "joule-node-local": "<2.0.0"
   },
   "scripts": {
