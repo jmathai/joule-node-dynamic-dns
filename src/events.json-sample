@@ -1,14 +1,20 @@
 {
   "env": {
-    "MY_SECRET": "_some_secret_"
+    "AWS_KEY": "",
+    "AWS_SECRET": "",
+    "ZONE": "example.com.",
+    "DOMAIN": "test.example.com.",
+    "SECRET": "secret"
   },
   "events": {
     "GET": {
-      "/user/joule": [
-        {"name":"name 1"}
-      ],
-      "/user/joule?name=name1": [
+      "/": [
         {}
+      ]
+    },
+    "POST": {
+      "/": [
+        {"token":"generate via `echo -n "xxx.xxx.xxx.xxx:test.example.com.:secret" | openssl dgst -sha256`"}
       ]
     }
   }
